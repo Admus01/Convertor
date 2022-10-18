@@ -123,16 +123,67 @@ if args.from_system.lower() == "dec" and args.to_system.lower() == "oct":
 
 
 if args.from_system.lower() == "bin" and args.to_system.lower() == "hex":
+    reversedStringResult = ""
     stringResult = ""
     tempResult = 0
     if length <= 4:
         i = 1
     else:
         i = math.ceil(length / 4)
-    while i >= 0:
-        print("cc")
-        while length % 4 != 0:
-            #tempResult += int(args.converting_value[length]) * 2 ** 
-            print("ahoj")
+    
+    while i > 0:
+        tempResult = 0
+        power = 0
+        while True:
+            tempResult += int(args.converting_value[length]) * 2 ** power
+            if length % 4 == 0:
+                break
             length -= 1
+            power += 1
         i -= 1
+        length -= 1
+
+        if tempResult > 9:
+            reversedStringResult += chr(tempResult + 55)
+        else:
+            reversedStringResult += str(tempResult)
+    
+    length = len(reversedStringResult) - 1
+
+    while length >= 0:
+        stringResult += reversedStringResult[length]
+        length -= 1
+
+    print(stringResult)
+    
+
+if args.from_system.lower() == "bin" and args.to_system.lower() == "dec":
+    reversedStringResult = ""
+    stringResult = ""
+    tempResult = 0
+    if length <= 4:
+        i = 1
+    else:
+        i = math.ceil(length / 4)
+    
+    while i > 0:
+        tempResult = 0
+        power = 0
+        while True:
+            tempResult += int(args.converting_value[length]) * 2 ** power
+            if length % 4 == 0:
+                break
+            length -= 1
+            power += 1
+        i -= 1
+        length -= 1
+
+        reversedStringResult += str(tempResult)
+    
+    length = len(reversedStringResult) - 1
+
+    while length >= 0:
+        stringResult += reversedStringResult[length]
+        length -= 1
+
+    
