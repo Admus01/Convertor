@@ -184,3 +184,5 @@ if args.from_system.lower() == "bin" and args.to_system.lower() == "oct":
         stringResult += reversedStringResult[length]
         length -= 1
     print(stringResult)
+
+    
