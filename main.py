@@ -186,3 +186,13 @@ if args.from_system.lower() == "bin" and args.to_system.lower() == "oct":
     print(stringResult)
 
     
+    if args.from_system.lower() == "oct" and args.to_system.lower() == "bin":
+
+
+    if args.from_system.lower() == "oct" and args.to_system.lower() == "hex":
+
+    
+    if args.from_system.lower() == "hex" and args.to_system.lower() == "bin":
+
+
+    if args.from_system.lower() == "hex" and args.to_system.lower() == "oct":
