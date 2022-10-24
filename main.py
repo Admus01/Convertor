@@ -1,5 +1,6 @@
 import argparse
 import math
+from turtle import st
 
 parser = argparse.ArgumentParser(description="convert values")
 
@@ -160,8 +161,10 @@ if args.from_system.lower() == "bin" and args.to_system.lower() == "oct":
     reversedStringResult = ""
     stringResult = ""
     tempResult = 0
-    if length <= 3:
+    if length <= 2:
         i = 1
+    elif length == 3:
+        i = 2
     else:
         i = math.ceil(length / 3)
     
@@ -179,7 +182,7 @@ if args.from_system.lower() == "bin" and args.to_system.lower() == "oct":
         reversedStringResult += str(tempResult)
     
     length = len(reversedStringResult) - 1
-
+    print(reversedStringResult)
     while length >= 0:
         stringResult += reversedStringResult[length]
         length -= 1
@@ -187,12 +190,20 @@ if args.from_system.lower() == "bin" and args.to_system.lower() == "oct":
 
     
     if args.from_system.lower() == "oct" and args.to_system.lower() == "bin":
+        print("cc")
+        stringResult = ""
+        power = 0
+        i = length
+        tempResult = " a"
+        while i >= 0:
+            tempResult += str(2 ** i)
+            i += 1
+        print(tempResult)
 
-
-    if args.from_system.lower() == "oct" and args.to_system.lower() == "hex":
+    #if args.from_system.lower() == "oct" and args.to_system.lower() == "hex":
 
     
-    if args.from_system.lower() == "hex" and args.to_system.lower() == "bin":
+    #if args.from_system.lower() == "hex" and args.to_system.lower() == "bin":
 
 
-    if args.from_system.lower() == "hex" and args.to_system.lower() == "oct":
+    #if args.from_system.lower() == "hex" and args.to_system.lower() == "oct":
